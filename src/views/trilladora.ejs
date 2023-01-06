@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./iconos/Trilladora.png" type="image/x-icon">
+    <title>Trilladora</title>
+</head>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+<!-- CSS -->
+<link rel="stylesheet" href="../resources/css/styles.css">
+<!-- Iconos -->
+
+<body>
+    <!-- Nav Bar Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CAFE SOLO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./inicio.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contactos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./inicio.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Opciones -->
+    <div class="container-fluid ">
+        <div class="col-12 botones_superiores mt-2">
+            <div class="con-atras d-lg-none">
+                <a href="/admin" class="btn btn-atras"><img src="../resources/iconos/atras.png" alt=""></a>
+            </div>
+            <div class="btn-rigth">
+                <button href="#" class="rounded-circle ms-3 border-0"><img src="../resources/iconos/filtrar.png" alt=""></button>
+                <button href="#" class="rounded-circle ms-2 border-0" data-bs-toggle="modal"
+                    data-bs-target="#form_lote_Modal"></a><img src="../resources/iconos/boton-agregar.png" alt=""></button>
+            </div>
+        </div>
+        <div class="row contenedor_historial">
+        </div>
+        <div class="row">
+
+        </div>
+        <!-- Modal Formulario Tostadora-->
+        <div class="modal fade " id="form_lote_Modal" tabindex="-1" aria-labelledby="form_tostado_Label"
+            aria-hidden="true">
+            <div class="modal-dialog ">
+                <div class="modal-content bg-light text-dark">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center w-100" id="form_tostado_Label">Nuevo Lote Trilladora</h5>
+                        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"
+                            style="width:50px ;"></button>
+                    </div>
+                    <div class="modal-body py-0">
+                        <figure class="text-center m-0">
+                            <img class="img-fluid pt-1" style="width:60px; height:60px;"
+                                src="../resources/iconos/trilladora_amarilla.png" alt="">
+                        </figure>
+                        <!-- Formulario INPUTS -->
+                        <form>
+                            <select class="form-select form-select-sm my-1" aria-label="Ejemplo de .form-select-sm">
+                                <option selected disabled>Lote</option>
+                                <option value="1">A</option>
+                                <option value="2">B</option>
+                                <option value="3">C</option>
+                            </select>
+                            <div class="mb-1">
+                                <label for="fechaSiembra" class="form-label needs-validation">Humedad</label>
+                                <input type="number" class="form-control" id="fechaSiembra" placeholder="Humeda">
+                            </div>
+                            <div class="mb-2">
+                                <label for="fechaSiembra" class="form-label">Peso Inicial</label>
+                                <input type="text" class="form-control" id="fechaSiembra" placeholder="Peso Kg">
+                            </div>
+                            <div class="mb-2">
+                                <label for="fechaSiembra" class="form-label">Peso Final</label>
+                                <input type="text" class="form-control" id="fechaSiembra" placeholder="Peso Kg">
+                            </div>
+                            <div class="peso_mayas" style="display: none;">
+                                <div class="mb-2">
+                                    <label for="fechaSiembra" class="form-label">Peso Por Mallas</label>
+                                    <input type="number" name="" class="form-control" id="malla17"
+                                        placeholder="Peso Malla 17" onkeyup="sumar()+function_calcular();">
+                                </div>
+                                <div class="mb-2">
+                                    <input type="number" name="" class="form-control" id="malla15"
+                                        placeholder="Peso Malla 15" onkeyup="sumar()+function_calcular();">
+                                </div>
+                                <div class="mb-2">
+                                    <input type="number" name="" class="form-control" id="malla13"
+                                        placeholder="Peso Malla 13" onkeyup="sumar()+function_calcular();">
+
+                                </div>
+                            </div>
+                            <h4 class="text-center">Factor De Rendimiento</h4>
+                            <h2 class="text-center h1">92%</h2>
+                        </form>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-secondary botones_cronometro"
+                            data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary botones_cronometro">Guardar Datos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <Script src="../resources/js/bootstrap.min.js"></Script>
+    <!-- Validacion JS -->
+    <Script src="../resources/js/validacion.js"></Script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../resources/iconos/inventario.png" type="image/x-icon">
+    <title>Bodega</title>
+</head>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+<!-- CSS -->
+<link rel="stylesheet" href="../resources/css/styles.css">
+<!-- Iconos -->
+
+<body>
+    <!-- Nav Bar Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CAFE SOLO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/admin">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contactos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Opciones -->
+    <div class="container-fluid ">
+        <div class="col-12 botones_superiores mt-2">
+            <div class="con-atras d-lg-none">
+                <a href="../resources/inicio.html" class="btn btn-atras"><img src="../resources/iconos/atras.png" alt=""></a>
+            </div>
+            <div class="btn-rigth">
+                <button href="#" class="rounded-circle ms-3 border-0"><img src="../resources/iconos/filtrar.png" alt=""></button>
+                <button href="#" class="rounded-circle ms-2 border-0" data-bs-toggle="modal"
+                    data-bs-target="#form_lote_Modal"></a><img src="../resources/iconos/boton-agregar.png" alt=""></button>
+            </div>
+        </div>
+        <div class="row contenedor_historial">
+        </div>
+        <div class="row">
+
+        </div>
+        <!-- Modal Formulario Tostadora-->
+        <div class="modal fade " id="form_lote_Modal" tabindex="-1" aria-labelledby="form_tostado_Label"
+            aria-hidden="true">
+            <div class="modal-dialog ">
+                <div class="modal-content bg-light text-dark">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center w-100" id="form_tostado_Label">Nuevo Lote Bodega</h5>
+                        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"
+                            style="width:50px ;"></button>
+                    </div>
+                    <div class="modal-body py-0">
+                        <figure class="text-center m-0">
+                            <img class="img-fluid pt-1" style="width:60px; height:60px;"
+                                src="../resources/iconos/bolsa-de-cafe.png" alt="">
+                        </figure>
+                        <!-- Formulario INPUTS -->
+                        <form class="needs-validation" id="form_bodega" novalidate>
+                            <div class="mb-1">
+                                <label for="dateFechaBodega" class="form-label needs-validation">Fecha de Compra</label>
+                                <input type="date" class="form-control datos_bodega" id="dateFechaBodega"
+                                    placeholder="Fecha de siembra" min="2000-01-01" max="2030-01-01">
+                                <div class="invalid-feedback">
+                                    Por favor, Seleccione una fecha.
+                                </div>
+                            </div>
+                            <div class="mb-1">
+                                <label for="textNombreProductorBodega" class="form-label" autofocus>Productor</label>
+                                <input type="text" class="form-control datos_bodega" id="textNombreProductorBodega"
+                                    placeholder="Nombre del Productor">
+                            </div>
+                            <label for="selectVariedadBodega" class="form-label">Variedad</label>
+                            <select class="form-select form-select-sm mb-1" id="selectVariedadBodega"
+                                name="selectVariedadBodega" aria-label="Ejemplo de .form-select-sm">
+                                <option selected disabled>Variedad</option>
+                                <option value="Caturra">Caturra</option>
+                                <option value="Catuai">Catuai</option>
+                                <option value="Pacamara">Pacamara</option>
+                                <option value="Bourbon">Bourbon</option>
+                                <option value="Maragoipe">Maragoipe</option>
+                                <option value="Tipica">Tipica</option>
+                                <option value="Tabi">Tabi</option>
+                                <option value="VariedadColombia">Variedad Colombia</option>
+                                <option value="SanBernardo">San Bernardo</option>
+                                <option value="Geisha">Geisha</option>
+                                <option value="Arabica">Arabica</option>
+                            </select>
+                            <div class="mb-1">
+                                <label for="numberAlturaBodega" class="form-label">Altura</label>
+                                <input type="number" class="form-control datos_bodega" id="numberAlturaBodega"
+                                    placeholder="MSNM">
+                            </div>
+                            <div class="mb-1">
+                                <label for="numberCantidadBodega" class="form-label">Cantidad</label>
+                                <input type="number" class="form-control datos_bodega" id="numberCantidadBodega"
+                                    placeholder="Cantidad en KG">
+                            </div>
+                            <div class="mb-1">
+                                <label for="numberPrecioBodega" class="form-label">Precio $</label>
+                                <input type="number" class="form-control datos_bodega" id="numberPrecioBodega"
+                                    placeholder="MSNM">
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button class="btn btn-primary">Guardar Datos</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <Script src="../resources/js/bootstrap.min.js"></Script>
+
+</body>
+</html>

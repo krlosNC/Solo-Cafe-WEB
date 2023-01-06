@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Solo</title>
+    <!-- link css -->
+    <link rel="stylesheet" href="../resources/css/styles.css">
+    <!-- link Bootstrap Css-->
+    <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+</head>
+
+<body class="body">
+    <div class="contenedor-login bg-dark bg-opacity-75">
+        <!-- Inicio Sesion -->
+        <div class="col-12 col-lg-6 bg-dark bg-opacity-75 pt-3 m-0 " id="contenedor_form">
+
+            <form action="/auth" method="POST" autocomplete="off">
+                <div class="text-center w-100">
+                    <h2 class="h2 pt-4 pb-3 ">Iniciar Sesion</h2>
+                    <img src="..resources/iconos/inicio_Persona.gif" class="rounded-circle" alt="" width="100px">
+                </div>
+                <!-- Nombre Usuario -->
+                <div class="col-12 mt-0" style="padding: 0 70px 0 70px;">
+                    <label for="validationCustom01" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" name="mailAdmin" id="mailAdmin" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese su nombre de usuario.
+                    </div>
+                </div>
+                <!-- Contraseña Usuario -->
+                <div class="col-12 " style="padding: 0 70px 0 70px;">
+                    <label for="validationCustom02" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" name="passwordAdmin" id="passwordAdmin" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese su contraseña.
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <!-- Terminos y Condiciones -->
+                    <div class="form-check ps-0 mt-1 ms-5 ps-5">
+                        <input class="form-check-input " type="checkbox" value="" id="invalidCheck">
+                        <label class="form-check-label" for="invalidCheck">&nbsp
+                            Recordarme
+                        </label>
+                        <div class="invalid-feedback ms-5">
+                            Debe estar de acuerdo antes de enviar.
+                        </div>
+                    </div>
+                    <!-- BOton y Texto Registrarse -->
+
+                </div>
+                <!-- Boton Iniciar Sesion -->
+                <div class="col-12 d-flex justify-content-center mb-2 pb-4 pt-3">
+                    <button class="btn bg-black bg-opacity-75 rounded text-white" type="submit">Iniciar sesión</button>
+                </div>
+                <div style="margin-top: 25%;">
+                    <p class="text-center text-white">&copy; Café Solo 2022</p>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <!-- -------------------------------------------------------------------------------------------------- -->
+    <!-- Bootstrap JS -->
+    <Script src="../resources/js/bootstrap.min.js"></Script>
+    <!-- Validación JS-->
+    <Script src="../resources/js/validacion.js"></Script>
+
+    <!-- SWEETALERT -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if (typeof alert != "undefined")  { %>
+      <script>
+        Swal.fire({
+          title:'<%= alertTitle %>',
+          text:'<%= alertMessage %>',
+          icon:'<%= alertIcon %>',
+          showConfirmButton: <%= showConfirmButton %>,
+          timer: <%= timer %>
+        }).then(()=>{
+          window.location='/<%= ruta %>'
+        })
+      </script>
+    <% } %>
+</body>
+
+</html>

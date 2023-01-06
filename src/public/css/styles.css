@@ -1,0 +1,190 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+.inicio{
+    background-image: url(../imagenes/fondo.jpg);
+    background-size: cover;
+    min-height: 600px;
+}
+/* Login */
+.contenedor-login{
+    display: flex;
+    justify-content: end;
+    min-height: 100vh;
+    background-image: url(../imagenes/fondo-negro.jfif);
+    background-size: cover;
+    object-fit: cover;
+    color: white;
+}
+#contenedor_form{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0;
+}
+
+/* Opciones Inicio */
+.container_inicio{
+    display: flex;
+    justify-content: center;
+}
+.containerOpciones{
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    padding-top: 3em;
+}
+.containerOpciones a{
+    max-width: 150px;
+    max-height: 150px;
+    margin: 1em 2em;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inicio_opciones{
+    padding: .5em 0em;
+    background-color: rgb(29, 28, 26);
+    max-width: 150px;
+    max-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 20px;
+    font-size: 20px;
+}
+.inicio_opciones img{
+    max-width: 80px;
+}
+
+/* Contenedor tostadora */
+.contenedor_historial{
+    margin: .5em 0 0 1em;
+    border-top: solid 3px rgb(255, 170, 0);
+    border-left: solid 3px rgb(255, 170, 0);
+    padding: 1em 0 0 1em;
+    min-height: 85vh;
+    max-width: 100%;
+}
+.botones_superiores img{
+    height: 32px;
+    width: 32px;
+}
+/* Cronometro */
+.reloj{
+	font-size: 60px;
+	color: #756a6a;
+    width: 112px;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    text-align: center;
+}
+#Minutos{
+    width: 60px;
+    margin-right: 7px;
+}
+.cronometro{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: flex-start;
+    width: auto;
+    height: 80px;
+}
+    /*Botones Cronometro*/
+.botones_cronometro{
+    border: 0;
+    padding: 8px 15px;
+    border-radius: 30px;
+    margin-right: .5em;
+}
+#iniciob{
+    width: 150px;
+    background-color: #b0f050;
+    color: rgb(140, 140, 140);
+}
+#reinicio{
+    width: 50px;
+    background-color: #a3a2a2;
+    color: rgb(255, 255, 255);
+}
+#cambiot{
+    max-width: 200px;
+    background-color: #ff7c51;
+    color: rgb(255, 255, 255);
+}
+#parar{
+    width: 120px;
+    background-color: #ff5218;
+    color: rgb(255, 255, 255);
+}
+
+/* HOVER */
+/* Hover Opciones Inicio */
+.inicio_opciones:hover{
+    scale: 1.1;
+    transition: .3s;
+}
+/* Hover Botones superiores */
+.botones_superiores button:hover{
+    scale: 1.1;
+}
+/* Hover Botones cronometro */
+.botones_cronometro:hover{
+    scale: 1.1;
+    transition: .3s;
+}
+@media (max-width: 400px) {
+    .botones_cronometro{
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 540px) {
+    /* Opciones Inicio */
+    .containerOpciones{
+        padding-top: 1em;
+    }
+    .inicio_opciones{
+        padding: .5em 0em;
+        min-width: 100px;
+        min-height: 100px;
+        margin: .5em 1em;
+        font-size: 16px;
+    }
+    .containerOpciones a{
+        max-width: 100px;
+        max-height: 100px;
+        margin: 1em 1em;
+    }
+    .inicio_opciones img{
+        max-width: 40px;
+    }
+
+}
+@media (max-width: 992px) {
+     /* Botones superiores */
+     .botones_superiores{
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 20px;
+     }
+     .con-atras{
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+     }
+     .btn-rigth{
+        margin-inline-start: auto;
+     }
+
+}
+
+

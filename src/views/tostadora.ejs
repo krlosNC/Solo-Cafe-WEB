@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="iconos/tostado-de-granos.png" type="image/x-icon">
+    <title>Tostadora</title>
+</head>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+<!-- CSS -->
+<link rel="stylesheet" href="../resources/css/styles.css">
+<!-- Iconos -->
+
+<body>
+    <!-- Nav Bar Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CAFE SOLO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./inicio.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contactos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./inicio.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Opciones -->
+    <div class="container-fluid ">
+        <div class="col-12 botones_superiores mt-2">
+            <div class="con-atras d-lg-none">
+                <a href="/admin" class="btn btn-atras"><img src="../resources/iconos/atras.png" alt=""></a>
+            </div>
+            <div class="btn-rigth">
+                <button href="#" class="rounded-circle ms-3 border-0"><img src="../resources/iconos/filtrar.png" alt=""></button>
+                <button href="#" class="rounded-circle ms-2 border-0" data-bs-toggle="modal"
+                data-bs-target="#form_tostado_Modal"></a><img src="../resources/iconos/boton-agregar.png" alt=""></button>
+            </div>
+        </div>
+        <div class="row contenedor_historial">
+        </div>
+        <div class="row">
+
+        </div>
+        <!-- Modal Formulario Tostadora-->
+        <div class="modal fade " id="form_tostado_Modal" tabindex="-1" aria-labelledby="form_tostado_Label"
+            aria-hidden="true">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center w-100" id="form_tostado_Label">Nuevo Lote Tostión</h5>
+                        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"
+                            style="width:50px ;"></button>
+                    </div>
+                    <div class="modal-body pt-0">
+                        <!-- Cronometro -->
+                        <div class="cronometro">
+                            <div class="reloj" id="Minutos">00</div>
+                            <div class="reloj" id="Segundos">:00</div>
+                            <div class="reloj" id="Centesimas">:00</div>
+                        </div>
+                        <h6 class="text-center" id="ventilacion" style="color:red;">Primera Ventilación</h6>
+                        <!-- Formulario INPUTS -->
+                        <form>
+                            <select class="form-select form-select-sm my-3" aria-label="Ejemplo de .form-select-sm">
+                                <option selected>Lote</option>
+                                <option value="1">Uno</option>
+                                <option value="2">Dos</option>
+                                <option value="3">Tres</option>
+                              </select>
+                              <select class="form-select form-select-sm mb-3" aria-label="Ejemplo de .form-select-sm">
+                                <option selected>Color</option>
+                                <option value="1">Uno</option>
+                                <option value="2">Dos</option>
+                                <option value="3">Tres</option>
+                              </select>
+                              <div class="mb-3">
+                                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Humedad Inicial">
+                              </div>
+                              <div class="mb-3">
+                                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Humedad Final">
+                              </div>
+                              <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Temperatura Maxima 220°C</label>
+                                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Temperatura Minima">
+                              </div>
+                              <div class="mb-3">
+                                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Peso Final">
+                              </div>
+                          </form>
+                        <!-- Botones Cronometro -->
+                        <div class="col-12 text-center">
+                            <input type="button" class="botones_cronometro " id="iniciob" value="Empezar"
+                                onclick="inicio();">
+                            <input type="button" class="botones_cronometro" id="reinicio"
+                                value="&#8635;" onclick="reinicio();" disabled>
+
+                        </div>
+                        <div class="col-12 text-center mt-1">
+                            <input type="button" class="botones_cronometro" id="cambiot" value="Cambio De Temperatura"
+                                onclick="" disabled>
+                            <input type="button" class="botones_cronometro " id="parar" value="Terminar"
+                                onclick="parar();" disabled>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-secondary botones_cronometro" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary botones_cronometro">Guardar Datos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <Script src="../resources/js/bootstrap.min.js"></Script>
+    <!-- Funciones JS -->
+    <script src="../resources/js/funciones.js"></script>
+</body>
+
+</html>

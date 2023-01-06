@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./iconos/perfil.png" type="image/x-icon">
+    <title>Solo</title>
+</head>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+<!-- CSS -->
+<link rel="stylesheet" href="../resources/css/styles.css">
+<!-- Iconos -->
+
+<body>
+    <!-- Nav Bar Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">CAFE SOLO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contactos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../resources/login.html"><img src="../resources/iconos/perfil.png" alt="" width="28px"></a>
+                    </li>
+                    <% if(login){ %>
+                        <li>
+                          <a class="dropdown-item d-flex align-items-center text-white" href="/logout">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>Cerrar Sesión</span>
+                          </a>
+                        </li>
+                    <% }else { %>
+                        
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Opciones -->
+    <div class="container-fluid container_inicio">
+        <div class="row containerOpciones">
+            <a href="/bodega">
+                <div class="card text-center inicio_opciones" style="width:10rem;">
+                    <img src="../resources/iconos/inventario.png" class="card-img-top" alt="...">
+                    <div class="">
+                        <p class="card-text">Bodega</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/trilladora">
+                <div class="card text-center inicio_opciones" style="width:10rem;">
+                    <img src="../resources/iconos/Trilladora.png" class="card-img-top" alt="...">
+                    <div class="">
+                        <p class="card-text">Trilladora</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/tostadora">
+                <div class="card text-center inicio_opciones" style="width:10rem;">
+                    <img src="../resources/iconos/tostado-de-granos.png" class="card-img-top" alt="...">
+                    <div class="">
+                        <p class="card-text">Tostadora</p>
+                    </div>
+                </div>
+            </a>
+            <a href="./molienda.html">
+                <div class="card text-center inicio_opciones" style="width:10rem;">
+                    <img src="../resources/iconos/moledora.png" class="card-img-top" alt="...">
+                    <div class="">
+                        <p class="card-text">Molienda</p>
+                    </div>
+                </div>
+            </a>
+            <a href="./inventario.html">
+                <div class="card text-center inicio_opciones" style="width:10rem;">
+                    <img src="../resources/iconos/bodega.png" class="card-img-top" alt="...">
+                    <div class="">
+                        <p class="card-text">Inventario</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="card text-center inicio_opciones" style="width:10rem;">
+                    <img src="../resources/iconos/paquetes.png" class="card-img-top" alt="...">
+                    <div class="">
+                        <p class="card-text">Microlotes</p>
+                    </div>
+                </div>
+            </a>
+            <a href="./lote.html">
+                <div class="card text-center inicio_opciones" style="width:10rem;">
+                    <img src="../resources/iconos/farm.png" class="card-img-top" alt="...">
+                    <div class="">
+                        <p class="card-text">Lotes</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="card text-center inicio_opciones" style="width:10rem;">
+                    <img src="../resources/iconos/ingeniero.png" class="card-img-top" alt="...">
+                    <div class="">
+                        <p class="card-text">Operario</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="card text-center inicio_opciones" style="width:10rem;">
+                    <img src="../resources/iconos/compras.png" class="card-img-top" alt="...">
+                    <div class="">
+                        <p class="card-text">Compras</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="card text-center inicio_opciones" style="width:10rem;">
+                    <img src="../resources/iconos/ventas.png" class="card-img-top" alt="...">
+                    <div class="">
+                        <p class="card-text">Ventas</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+    <!-- Bootstrap JS -->
+    <Script src="../resources/js/bootstrap.min.js"></Script>
+</body>
+
+</html>
