@@ -5,12 +5,13 @@ import connection from '../db.js';
 
 // Por si quiero registrar un nuevo administrador
 export const createAdmin = async (req, res)=>{
-	const email = req.body.email;
     const name = req.body.name;
+	const cedula = req.body.cedula;
+	const usuario = req.body.usuario;
     const password = req.body.password;
 
     let passHaas = await bcryptjs.hash(password, 8);
-    connection.query('INSERT INTO users SET ?', {email:email, name:name, password:passHaas}, async(error, results)=>{
+    connection.query('INSERT INTO tbl_usuario SET ?', { nombre:name, cedula:cedula, usuario:usuario , contraseña:passHaas}, async(error, results)=>{
         if(error){
             console.log(error)
         }else{
@@ -21,14 +22,14 @@ export const createAdmin = async (req, res)=>{
 
 // Autenticación de login admin
 export const auteticaAdmin = async (req, res)=> {
-	const adminMail = req.body.mailAdmin;
+	const userAdmin = req.body.userAdmin;
     const adminContra = req.body.passwordAdmin;
 
     let passHaas = await bcryptjs.hash(adminContra, 8)
 
-     if(adminMail && adminContra){
-        connection.query('SELECT * FROM users WHERE email=?', [adminMail], async (error , results)=>{
-            if(results.length == 0 || !(await bcryptjs.compare(adminContra, results[0].password))){
+     if(userAdmin && adminContra){
+        connection.query('SELECT * FROM tbl_usuario WHERE usuario=?', [userAdmin], async (error , results)=>{
+            if(results.length == 0 || !(await bcryptjs.compare(adminContra, results[0].contraseña))){
                  res.render('login', {
                     alert: true,
                     alertTitle: "Error",
@@ -67,7 +68,6 @@ export const auteticaAdmin = async (req, res)=> {
 }
 
 // CONTROLAR QUE EL AUTH ESTE EN TODAS LAS VISTAS DEL MODULO ADMINISTRADOR
-
 export const controlerAdmin = (req, res)=> {
 	if(req.session.loggedin){
         res.render('admin', {

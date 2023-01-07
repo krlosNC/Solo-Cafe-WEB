@@ -42,7 +42,7 @@
     <div class="container-fluid ">
         <div class="col-12 botones_superiores mt-2">
             <div class="con-atras d-lg-none">
-                <a href="../resources/inicio.html" class="btn btn-atras"><img src="../resources/iconos/atras.png" alt=""></a>
+                <a href="./admin" class="btn btn-atras"><img src="../resources/iconos/atras.png" alt=""></a>
             </div>
             <div class="btn-rigth">
                 <button href="#" class="rounded-circle ms-3 border-0"><img src="../resources/iconos/filtrar.png" alt=""></button>
@@ -71,10 +71,10 @@
                                 src="../resources/iconos/bolsa-de-cafe.png" alt="">
                         </figure>
                         <!-- Formulario INPUTS -->
-                        <form class="needs-validation" id="form_bodega" novalidate>
+                        <form action="/authBodega" method="POST" class="needs-validation" id="form_bodega" novalidate>
                             <div class="mb-1">
                                 <label for="dateFechaBodega" class="form-label needs-validation">Fecha de Compra</label>
-                                <input type="date" class="form-control datos_bodega" id="dateFechaBodega"
+                                <input type="date" class="form-control datos_bodega" name="dateFechaBodega" id="dateFechaBodega"
                                     placeholder="Fecha de siembra" min="2000-01-01" max="2030-01-01">
                                 <div class="invalid-feedback">
                                     Por favor, Seleccione una fecha.
@@ -82,11 +82,11 @@
                             </div>
                             <div class="mb-1">
                                 <label for="textNombreProductorBodega" class="form-label" autofocus>Productor</label>
-                                <input type="text" class="form-control datos_bodega" id="textNombreProductorBodega"
+                                <input type="text" class="form-control datos_bodega" id="textNombreProductorBodega" name="textNombreProductorBodega"
                                     placeholder="Nombre del Productor">
                             </div>
                             <label for="selectVariedadBodega" class="form-label">Variedad</label>
-                            <select class="form-select form-select-sm mb-1" id="selectVariedadBodega"
+                            <select class="form-select form-select-sm mb-1" id="selectVariedadBodega" name="selectVariedadBodega"
                                 name="selectVariedadBodega" aria-label="Ejemplo de .form-select-sm">
                                 <option selected disabled>Variedad</option>
                                 <option value="Caturra">Caturra</option>
@@ -103,22 +103,22 @@
                             </select>
                             <div class="mb-1">
                                 <label for="numberAlturaBodega" class="form-label">Altura</label>
-                                <input type="number" class="form-control datos_bodega" id="numberAlturaBodega"
+                                <input type="number" class="form-control datos_bodega" id="numberAlturaBodega" name="numberAlturaBodega"
                                     placeholder="MSNM">
                             </div>
                             <div class="mb-1">
                                 <label for="numberCantidadBodega" class="form-label">Cantidad</label>
-                                <input type="number" class="form-control datos_bodega" id="numberCantidadBodega"
+                                <input type="number" class="form-control datos_bodega" id="numberCantidadBodega" name="numberCantidadBodega"
                                     placeholder="Cantidad en KG">
                             </div>
                             <div class="mb-1">
                                 <label for="numberPrecioBodega" class="form-label">Precio $</label>
-                                <input type="number" class="form-control datos_bodega" id="numberPrecioBodega"
+                                <input type="number" class="form-control datos_bodega" id="numberPrecioBodega" name="numberPrecioBodega"
                                     placeholder="MSNM">
                             </div>
                             <div class="modal-footer d-flex justify-content-center">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button class="btn btn-primary">Guardar Datos</button>
+                                <button class="btn btn-primary" type="submit">Guardar</button>
                             </div>
                         </form>
                     </div>
@@ -128,6 +128,23 @@
     </div>
     <!-- Bootstrap JS -->
     <Script src="../resources/js/bootstrap.min.js"></Script>
+
+    <!-- SWEETALERT -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if (typeof alert != "undefined")  { %>
+      <script>
+        Swal.fire({
+          title:'<%= alertTitle %>',
+          text:'<%= alertMessage %>',
+          icon:'<%= alertIcon %>',
+          showConfirmButton: <%= showConfirmButton %>,
+          timer: <%= timer %>
+        }).then(()=>{
+          window.location='/<%= ruta %>'
+        })
+      </script>
+    <% } %>
 
 </body>
 </html>

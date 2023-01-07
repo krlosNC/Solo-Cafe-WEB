@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./inicio.html">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="/admin">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Acerca de Nosotros</a>
@@ -75,11 +75,9 @@
                         </figure>
                         <!-- Formulario INPUTS -->
                         <form>
-                            <select class="form-select form-select-sm my-1" aria-label="Ejemplo de .form-select-sm">
+                            <select class="form-select form-select-sm my-1" id="selectVariedadBodega"
+                            name="selectVariedadBodega" aria-label="Ejemplo de .form-select-sm">
                                 <option selected disabled>Lote</option>
-                                <option value="1">A</option>
-                                <option value="2">B</option>
-                                <option value="3">C</option>
                             </select>
                             <div class="mb-1">
                                 <label for="fechaSiembra" class="form-label needs-validation">Humedad</label>
@@ -126,6 +124,30 @@
     <Script src="../resources/js/bootstrap.min.js"></Script>
     <!-- Validacion JS -->
     <Script src="../resources/js/validacion.js"></Script>
-</body>
 
+    <script>
+         let url = 'http://localhost:3000/trilladoraAdmin'
+         fetch(url)
+             .then(res => res.json())
+             .then(data => mostrarData(data))
+             .catch(error => console.log(error))
+
+         const mostrarData = (data) => {
+
+             console.log(data)
+
+             cargarOpciones("selectVariedadBodega", data);
+
+             function cargarOpciones(domElement, array) {
+                 var select = document.getElementsByName(domElement)[0];
+
+                 for (value in array) {
+                     var option = document.createElement("option");
+                     option.text = array[value].idProductoBode;
+                     select.add(option);
+                 }
+             }
+         }
+    </script>
+</body>
 </html>

@@ -38,7 +38,7 @@ app.use(landingRoutes);
 app.use(loginRoutes);
 app.use(adminRoutes);
 
-app.use((req, res, next) => {
+app.use((req, res, next, error) => {
     return res.render('404')
 })
 
